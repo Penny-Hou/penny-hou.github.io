@@ -288,127 +288,6 @@
     padding: 1rem;
   }
   .life-placeholder .icon { font-size: 1.6rem; }
-/* ─── TRAVEL MAP ─── */
-.travel-explorer {
-  display: grid;
-  grid-template-columns: 1.05fr 1.25fr;
-  gap: 1.2rem;
-  align-items: stretch;
-  margin: 1rem 0 2rem;
-}
-
-.travel-globe {
-  position: relative;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.85) 12%, rgba(200,216,240,0.85) 28%, rgba(93,122,168,0.35) 58%, rgba(35,48,67,0.12) 100%);
-  box-shadow: inset 0 0 24px rgba(40, 52, 77, 0.12);
-}
-
-.travel-globe::before {
-  content: "";
-  position: absolute;
-  inset: 12%;
-  border-radius: 50%;
-  border: 1px solid rgba(42, 58, 82, 0.18);
-}
-
-.travel-hotspot {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 0 6px rgba(43, 94, 167, 0.15);
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-}
-
-.travel-hotspot:hover {
-  transform: translate(-50%, -50%) scale(1.15);
-}
-
-.travel-hotspot.active {
-  background: #b07a3a;
-  box-shadow: 0 0 0 8px rgba(176, 122, 58, 0.18);
-}
-
-.travel-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1rem 1.1rem;
-}
-
-.travel-panel-head {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.travel-kicker {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
-.travel-title {
-  font-family: 'Lora', serif;
-  font-size: 1.3rem;
-  line-height: 1.15;
-  color: var(--text);
-}
-
-.travel-description {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.travel-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.4rem;
-}
-
-.travel-card {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--surface2);
-}
-
-.travel-card img {
-  display: block;
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-}
-
-.travel-card p {
-  padding: 0.5rem 0.65rem 0.7rem;
-  font-size: 0.72rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-  background: var(--surface);
-}
-
-@media (max-width: 760px) {
-  .travel-explorer {
-    grid-template-columns: 1fr;
-  }
-}
   /* ─── RESEARCH ─── */
   .papers { display: flex; flex-direction: column; }
 
@@ -485,6 +364,23 @@
   }
   .btn-cv:hover { opacity: 0.85; }
 
+  /* ─── TEACHING ─── */
+  .courses { display: flex; flex-direction: column; }
+  .course {
+    display: grid; grid-template-columns: 84px 1fr; gap: 1.3rem;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border-soft);
+  }
+  .course:first-child { padding-top: 0; }
+  .course-title {
+    font-family: 'Lora', serif; font-size: 1rem; font-weight: 500;
+    color: var(--text); line-height: 1.45; margin-bottom: 0.3rem;
+  }
+  .course-title .code { color: var(--blue); }
+  .course-meta {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.61rem;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim);
+  }
+
   /* ─── CONTACT ─── */
   .contact-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -546,7 +442,7 @@
   <nav class="header-nav">
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#cv">CV</a>
+    <a href="#teaching">Teaching</a>
     <a href="#contact">Contact</a>
     <a href="#life" class="life">✦ Life</a>
   </nav>
@@ -690,6 +586,33 @@
             </div>
           </div>
         </div>
+        <!-- PUB 4 -->
+        <div class="paper">
+          <span class="paper-badge badge-pub">PUB</span>
+          <div>
+            <div class="paper-title">The Economic Value of Precision Phosphorus Management: A Bayesian Analysis of Subplot-Level Heterogeneity</div>
+            <div class="paper-authors">Peibin Hou, Wenying Li, Joshua Duke, Joshua M. McGrath, and Vaughn Reed</div>
+            <div class="paper-venue">Under Review or R&R</div>
+            <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '▼ Hide Abstract' : '▶ Show Abstract';">
+              ▶ Show Abstract
+            </button>
+            <p class="paper-abstract">
+              Efficient phosphorus (P) management is essential for balancing agricultural produc- tivity and 
+              environmental outcomes. Using high-resolution experimental data and Bayesian Hierarchical Model, 
+              this study examines how soil heterogeneity shapes yield responses to a fixed P application. Results 
+              show strong context dependence: the yield response to the fixed P treatment varies with baseline M3P, 
+              soil buffering capacity, and neighboring M3P. Economic simulations indicate that site-specific 
+              P management increases net returns by $13.21 per acre relative to the current recommendation, while 
+              reducing P inputs by up to 60.9%. The enhanced-information rule generates on-farm benefits $18.1 
+              million annually in Kentucky.
+            </p>
+            <div class="paper-tags">
+              <span class="paper-tag">Bayesian Methods</span>
+              <span class="paper-tag">Risk Management</span>
+              <span class="paper-tag">Precision Agriculture</span>
+            </div>
+          </div>
+        </div>
 
         <!-- WP 1 -->
         <div class="paper">
@@ -735,37 +658,6 @@
         <div class="paper">
           <span class="paper-badge badge-wp">UR/RR</span>
           <div>
-            <div class="paper-title">The Economic Value of Precision Phosphorus Management: A Bayesian Analysis of Subplot-Level Heterogeneity</div>
-            <div class="paper-authors">Peibin Hou, Wenying Li, Joshua Duke, Joshua M. McGrath, and Vaughn Reed</div>
-            <div class="paper-venue">Under Review or R&R</div>
-            <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '▼ Hide Abstract' : '▶ Show Abstract';">
-              ▶ Show Abstract
-            </button>
-            <p class="paper-abstract">
-              Efficient phosphorus (P) management is essential for balancing agricultural productivity
-               and environmental outcomes. Using high-resolution experimental data and Bayesian Hierarchical Model, 
-               this study examines how soil heterogeneity shapes yield responses to a fixed P application. 
-               Results show strong context dependence: the heterogeneity is in magnitude rather than in sign, 
-               as 94% of subplots have a positive expected response, yet only 39% respond by enough to cover 
-               the cost of an application. Responses decline with a subplot’s own soil test P, increase with 
-               buffering capacity, and decrease with P availability in neighboring subplots. Economic and 
-               environmental simulations indicate that site-specific P management raises net returns by $10.20 
-               per acre relative to the current recommendation, while reducing P inputs by 53.5%. These 
-               reductions generate substantial environmental benefits, with avoided external damage costs 
-               approaching $17 million annually in Kentucky.
-            </p>
-            <div class="paper-tags">
-              <span class="paper-tag">Bayesian Methods</span>
-              <span class="paper-tag">Risk Management</span>
-              <span class="paper-tag">Precision Agriculture</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- WP 3 -->
-        <div class="paper">
-          <span class="paper-badge badge-wp">UR/RR</span>
-          <div>
             <div class="paper-title">Harmony in Trade: Impact of Quality-Enhancement and Labor-Welfare Voluntary Sustainable Standards from a Global Perspective</div>
             <div class="paper-authors">Peibin Hou, Xiangwen Kong, and Falin Sun</div>
             <div class="paper-venue">Under Review or R&R</div>
@@ -780,7 +672,8 @@
             <div class="paper-tags">
               <span class="paper-tag">Agri-food standards</span>
               <span class="paper-tag">International trade</span>
-              <span class="paper-tag">Developing countries</span>
+              <span class="paper-tag">Sustainability</span>
+              <span class="paper-tag">Social Welfare</span>
             </div>
           </div>
         </div>
@@ -788,7 +681,7 @@
       </div>
     </section>
 
-        <!-- WP 4 -->
+        <!-- WP 3 -->
         <div class="paper">
           <span class="paper-badge badge-wp">UR/RR</span>
           <div>
@@ -809,58 +702,49 @@
           </div>
         </div>
 
-
-
-        <!-- WP 5 -->
-        <div class="paper">
-          <span class="paper-badge badge-wip">WIP</span>
+    <!-- Teaching -->
+    <section id="teaching">
+      <div class="section-label">Teaching</div>
+      <div class="courses">
+        <div class="course">
+          <span class="paper-badge badge-wp">Instructor</span>
           <div>
-            <div class="paper-title">Unintended Sugar Binge: Effects of E-Cigarette Flavor Bans on Nutrient Consumption</div>
-            <div class="paper-authors">Peibin Hou and Wenying Li</div>
-            <div class="paper-venue">Working Paper</div>
-            <div class="paper-tags">
-              <span class="paper-tag">DiD</span>
-              <span class="paper-tag">Nutrition</span>
-              <span class="paper-tag">Scanner Data</span>
-              <span class="paper-tag">Consumer Behavior</span>
-            </div>
+            <div class="course-title"><span class="code">AGEC 3200</span> · Quantitative Methods in Agricultural Economics</div>
+            <div class="course-meta">Auburn University · 2024 – Present</div>
           </div>
         </div>
-
-    <!-- CV -->
-    <section id="cv">
-      <div class="section-label">Curriculum Vitae</div>
-      <div class="cv-card">
-        <div>
-          <h3>Full Curriculum Vitae</h3>
-          <p>Includes education, publications, working papers, conference presentations, teaching experience, technical skills, and awards. Last updated March 2026.</p>
+        <div class="course">
+          <span class="paper-badge badge-wip">TA</span>
+          <div>
+            <div class="course-title">Econometrics (Undergraduate)</div>
+            <div class="course-meta">Renmin University of China · Fall 2023</div>
+          </div>
         </div>
-        <a class="btn-cv" href="Peibin_Hou_CV.pdf" target="_blank">↓ Download PDF</a>
       </div>
     </section>
-
+    
     <!-- CONTACT -->
     <section id="contact">
       <div class="section-label">Contact</div>
       <div class="contact-grid">
         <div class="contact-cell">
           <div class="clabel">Email</div>
-          <div class="cval"><a href="/cdn-cgi/l/email-protection#40303a28707076700021352235322e6e252435"><span class="__cf_email__" data-cfemail="10606a78202026205071657265627e3e757465">[email&#160;protected]</span></a></div>
+          <div class="cval"><a href="mailto:pzh0060@auburn.edu">pzh0060@auburn.edu</a></div>
         </div>
         <div class="contact-cell">
           <div class="clabel">Location</div>
           <div class="cval">Auburn, Alabama, USA</div>
         </div>
         <div class="contact-cell">
-          <div class="clabel">Department</div>
-          <div class="cval">Dept. of Agricultural Economics<br/>and Rural Sociology<br/>Auburn University</div>
+          <div class="clabel">Affiliation</div>
+          <div class="cval">Dept. of AERS<br/>Auburn University</div>
         </div>
         <div class="contact-cell">
           <div class="clabel">Academic Profiles</div>
           <div class="cval">
             <a href="https://scholar.google.com/citations?user=uJXBSBAAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a><br/>
-            <a href="#">SSRN</a><br/>
-            <a href="#">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Peibin-Hou?ev=hdr_xprf" target="_blank">ResearchGate</a><br/>
+            <a href="https://www.linkedin.com/in/peibin-penny-h-588293377/" target="_blank">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -938,87 +822,6 @@
   </main>
 </div>
 
-<script>
-  const travelData = {
-    alabama: {
-      title: "Alabama",
-      description: "A quiet trip home, with long afternoons, good food, and the kind of place that always feels familiar.",
-      photos: [
-        { src: "life1.jpg", caption: "A golden evening walk." },
-        { src: "life2.jpg", caption: "A slow weekend with friends." },
-        { src: "life3.jpg", caption: "Coffee, desserts, and a little wandering." }
-      ]
-    },
-    california: {
-      title: "California",
-      description: "The coast, the sunlight, and the rhythm of a city that never seems to stop moving.",
-      photos: [
-        { src: "life2.jpg", caption: "Sunset along the coast." },
-        { src: "life3.jpg", caption: "A sunny walk between cafés." },
-        { src: "life1.jpg", caption: "A quick stop for a scenic view." }
-      ]
-    },
-    beijing: {
-      title: "Beijing",
-      description: "A city full of history, long walks, and tiny moments that somehow stay with you for years.",
-      photos: [
-        { src: "life3.jpg", caption: "A winter street with warm light." },
-        { src: "life1.jpg", caption: "Old neighborhoods and new memories." },
-        { src: "life2.jpg", caption: "Late-night food walks." }
-      ]
-    },
-    paris: {
-      title: "Paris",
-      description: "A slow travel rhythm, beautiful streets, and the kind of scenery that makes you look twice.",
-      photos: [
-        { src: "life1.jpg", caption: "A quiet corner in the city." },
-        { src: "life2.jpg", caption: "An evening stroll after rain." },
-        { src: "life3.jpg", caption: "Architecture and light." }
-      ]
-    }
-  };
-
-  const travelTitle = document.getElementById("travel-title");
-  const travelDescription = document.getElementById("travel-description");
-  const travelGallery = document.getElementById("travel-gallery");
-
-  function renderTravel(place) {
-    const data = travelData[place];
-    if (!data) return;
-
-    travelTitle.textContent = data.title;
-    travelDescription.textContent = data.description;
-
-    travelGallery.innerHTML = data.photos.map(photo => `
-      <div class="travel-card">
-        <img src="${photo.src}" alt="${data.title} photo">
-        <p>${photo.caption}</p>
-      </div>
-    `).join("");
-
-    document.querySelectorAll(".map-pin, .region").forEach(el => {
-      const isActive = el.dataset.place === place;
-      el.classList.toggle("active", isActive);
-    });
-  }
-
-  document.querySelectorAll(".map-pin").forEach(pin => {
-    pin.addEventListener("click", () => renderTravel(pin.dataset.place));
-  });
-
-  document.querySelectorAll(".region").forEach(region => {
-    region.addEventListener("click", () => {
-      const place = region.dataset.place;
-      if (place === "north-america") renderTravel("alabama");
-      else if (place === "europe") renderTravel("paris");
-      else if (place === "asia") renderTravel("beijing");
-      else if (place === "south-america") renderTravel("california");
-      else renderTravel("alabama");
-    });
-  });
-
-  renderTravel("alabama");
-</script>
 <footer>
   <span>© 2026 Peibin (Penny) Hou · Auburn University</span>
   <a href="/cdn-cgi/l/email-protection#5323293b636365631332263126213d7d363726"><span class="__cf_email__" data-cfemail="2959534119191f1969485c4b5c5b47074c4d5c">[email&#160;protected]</span></a>
