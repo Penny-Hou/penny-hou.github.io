@@ -367,19 +367,11 @@
   /* ─── TEACHING ─── */
   .courses { display: flex; flex-direction: column; }
   .course {
-    display: grid; grid-template-columns: 84px 1fr; gap: 1.3rem;
+    display: grid; grid-template-columns: 104px 1fr; gap: 1.3rem;
     padding: 1.5rem 0; border-bottom: 1px solid var(--border-soft);
   }
   .course:first-child { padding-top: 0; }
-  .course-title {
-    font-family: 'Lora', serif; font-size: 1rem; font-weight: 500;
-    color: var(--text); line-height: 1.45; margin-bottom: 0.3rem;
-  }
-  .course-title .code { color: var(--blue); }
-  .course-meta {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.61rem;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim);
-  }
+  .course .paper-badge { width: 100%; padding: 0.22rem 0.5rem; }
 
   /* ─── CONTACT ─── */
   .contact-grid {
