@@ -22,6 +22,7 @@
     --sidebar-bg:   #c05d33;
     --sidebar-text: #fdf6f2;
     --sidebar-muted:#f0d5c8;
+    --sidebar-w:    340px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,7 +78,7 @@
   /* ─── LAYOUT ─── */
   .shell {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 340px 1fr;
     min-height: calc(100vh - 52px);
   }
 
@@ -86,7 +87,7 @@
     position: sticky;
     top: 52px;
     height: calc(100vh - 52px);
-    width: 500px;
+    width: 340px;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
     display: flex;
@@ -398,7 +399,7 @@
 
   /* ─── FOOTER ─── */
   footer {
-    position: fixed; bottom: 0; left: 300px; right: 0;
+    position: fixed; bottom: 0; left: 340px; right: 0;
     height: 36px; background: var(--surface);
     border-top: 1px solid var(--border);
     display: flex; align-items: center;
